@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Akshay Kumar | Full Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script>
       tailwind.config = {
         theme: {
@@ -35,210 +32,247 @@
       };
     </script>
   </head>
-  <body
-    class="bg-gray-50 text-gray-800 font-sans leading-relaxed tracking-wide flex flex-col min-h-screen"
-  >
+  <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed tracking-wide flex flex-col min-h-screen">
     <!-- Header -->
-    <header
-      class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-8 shadow-lg sticky top-0 z-50"
-    >
+    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-6 sticky top-0 z-50">
       <div class="container mx-auto px-6 flex justify-between items-center">
         <h1 class="text-3xl font-bold">Akshay Kumar</h1>
         <nav class="hidden md:block">
           <ul class="flex space-x-8">
-            <li>
-              <a
-                href="#about"
-                class="hover:text-gray-300 transition duration-300"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="#projects"
-                class="hover:text-gray-300 transition duration-300"
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a
-                href="#skills"
-                class="hover:text-gray-300 transition duration-300"
-                >Skills</a
-              >
-            </li>
-            <li>
-              <a
-                href="#services"
-                class="hover:text-gray-300 transition duration-300"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="#contact"
-                class="hover:text-gray-300 transition duration-300"
-                >Contact</a
-              >
-            </li>
+            <li><a href="#about" class="hover:text-gray-300 transition duration-300">About</a></li>
+            <li><a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a></li>
+            <li><a href="#skills" class="hover:text-gray-300 transition duration-300">Skills</a></li>
+            <li><a href="#services" class="hover:text-gray-300 transition duration-300">Services</a></li>
+            <li><a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a></li>
           </ul>
         </nav>
-        <button
-          class="md:hidden flex items-center text-white focus:outline-none"
-          id="menu-button"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
+        <button class="md:hidden flex items-center text-white focus:outline-none" id="menu-button">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
         </button>
       </div>
     </header>
 
     <!-- Mobile Menu -->
-    <nav
-      id="mobile-menu"
-      class="md:hidden fixed inset-0 bg-blue-700 bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out translate-x-full"
-    >
+    <nav id="mobile-menu" class="md:hidden fixed inset-0 bg-blue-700 bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
       <div class="flex justify-end p-4">
         <button id="close-menu" class="text-white">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
       <ul class="flex flex-col items-center space-y-8 py-8">
         <li>
-          <a
-            href="#about"
-            class="text-white text-xl hover:text-gray-300 transition duration-300"
-            >About</a
-          >
+          <a href="#about" class="text-white text-xl hover:text-gray-300 transition duration-300">About</a>
         </li>
         <li>
-          <a
-            href="#projects"
-            class="text-white text-xl hover:text-gray-300 transition duration-300"
-            >Projects</a
-          >
+          <a href="#projects" class="text-white text-xl hover:text-gray-300 transition duration-300">Projects</a>
         </li>
         <li>
-          <a
-            href="#skills"
-            class="text-white text-xl hover:text-gray-300 transition duration-300"
-            >Skills</a
-          >
+          <a href="#skills" class="text-white text-xl hover:text-gray-300 transition duration-300">Skills</a>
         </li>
         <li>
-          <a
-            href="#contact"
-            class="text-white text-xl hover:text-gray-300 transition duration-300"
-            >Contact</a
-          >
+          <a href="#contact" class="text-white text-xl hover:text-gray-300 transition duration-300">Contact</a>
         </li>
       </ul>
     </nav>
 
     <!-- Main Content -->
     <main class="flex-grow container mx-auto px-6 py-12">
-      <!-- About Section -->
-      <section
-        id="about"
-        class="mb-20 flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg p-8"
-      >
-        <div class="w-40 h-40 mb-8 md:mb-0 md:mr-12">
-          <img
-            src="/src/images/MyProfilePhoto.JPG"
-            alt="Profile Image"
-            class="w-full h-full rounded-full shadow-lg object-cover border-4 border-blue-500"
-          />
+      <section class="relative bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-20">
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+              <h1 class="text-5xl font-bold leading-tight">
+                Full Stack Developer
+                <span class="block text-blue-300">Specialized in Healthcare Solutions</span>
+              </h1>
+              <p class="text-xl text-gray-200">Building robust, scalable applications with modern technologies to transform healthcare delivery</p>
+              <div class="flex space-x-4">
+                <a href="#contact" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300"> Get in Touch </a>
+                <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300">
+                  View Projects
+                </a>
+              </div>
+            </div>
+            <div class="relative hidden md:block">
+              <div class="absolute inset-0 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
+              <img src="/src/images/MyProfilePhoto.JPG" alt="Akshay Kumar" class="relative z-10 w-64 h-64 rounded-full border-4 border-white shadow-xl mx-auto object-cover" />
+            </div>
+          </div>
         </div>
+        <!-- Wave effect -->
+        <div class="absolute bottom-0 left-0 right-0 overflow-hidden">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-12">
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              fill="#F9FAFB"
+            ></path>
+          </svg>
+        </div>
+      </section>
 
-        <div>
-          <h2 class="text-4xl font-semibold text-blue-700 mb-6">About Me</h2>
-          <p class="text-xl leading-relaxed max-w-3xl text-gray-700">
-            I am a passionate Full Stack Developer with expertise in .NET,
-            React, Angular, and more. I strive to build world-class systems,
-            particularly in the hospital domain, to enhance efficiency and
-            improve patient care. With over 5 years of experience, I bring a
-            wealth of knowledge and practical experience to every project.
-          </p>
+      <!-- Statistics Section (New) -->
+      <section class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <span class="text-4xl font-bold text-blue-600">5+</span>
+            <p class="text-gray-600 mt-2">Years Experience</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <span class="text-4xl font-bold text-blue-600">20+</span>
+            <p class="text-gray-600 mt-2">Projects Completed</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <span class="text-4xl font-bold text-blue-600">10+</span>
+            <p class="text-gray-600 mt-2">Healthcare Clients</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <span class="text-4xl font-bold text-blue-600">3</span>
+            <p class="text-gray-600 mt-2">Major HMIS Systems</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="container mx-auto px-6 py-12">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-48 h-48 flex-shrink-0">
+              <img src="/src/images/MyProfilePhoto.JPG" alt="Profile Image" class="w-full h-full rounded-full shadow-lg object-cover border-4 border-blue-500" />
+            </div>
+            <div class="flex-1">
+              <h2 class="text-4xl font-semibold text-blue-700 mb-6">About Me</h2>
+              <div class="space-y-4">
+                <p class="text-xl text-gray-700">
+                  I am a passionate Full Stack Developer with over 5 years of expertise in healthcare software development. Specializing in .NET, React, and Angular, I've dedicated
+                  my career to building efficient healthcare management systems that make a real difference in patient care delivery.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mt-6">
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span>Healthcare Domain Expert</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span>Full Stack Development</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span>Database Architecture</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                    <span>Cloud Solutions</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Projects Section -->
       <section id="projects" class="mb-20">
         <h2 class="text-4xl font-semibold text-blue-700 mb-8">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200"
-          >
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">
-              Project Title 1
-            </h3>
+        <div class="grid grid-cols-1 gap-8">
+          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+            <h3 class="text-2xl font-bold mb-4 text-blue-600">eBios Core</h3>
+            <div class="mb-4">
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> .NET Core Web API </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> React TypeScript </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Entity Framework </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Multiple DB Support </span>
+            </div>
             <p class="text-gray-700 mb-6">
-              A brief description of the project highlighting its features and
-              technologies used.
+              A modern, full-featured Hospital Management Information System (HMIS) built with cutting-edge technologies. The system provides comprehensive healthcare facility
+              management capabilities with support for multiple database platforms.
             </p>
-            <a
-              href="#"
-              class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 font-medium inline-block"
-              >View Project</a
-            >
+            <div class="mb-6">
+              <h4 class="font-semibold mb-2">Key Features:</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Multi-database support (SQL Server, Oracle, MySQL)</li>
+                <li>Laboratory management system</li>
+                <li>Radiology and ultrasound module</li>
+                <li>Clinical management system</li>
+                <li>Appointment scheduling</li>
+                <li>Modern API architecture with Entity Framework</li>
+              </ul>
+            </div>
           </div>
 
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200"
-          >
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">
-              Project Title 2
-            </h3>
+          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+            <h3 class="text-2xl font-bold mb-4 text-blue-600">eBios Lite</h3>
+            <div class="mb-4">
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> ASP.NET </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> C# </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Oracle </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Bootstrap </span>
+            </div>
             <p class="text-gray-700 mb-6">
-              A brief description of the project highlighting its features and
-              technologies used.
+              A comprehensive Hospital Management Information System (HMIS) designed to streamline healthcare operations. Built with robust technologies to ensure reliability and
+              performance.
             </p>
-            <a
-              href="#"
-              class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 font-medium inline-block"
-              >View Project</a
-            >
+            <div class="mb-6">
+              <h4 class="font-semibold mb-2">Core Components:</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Integrated laboratory management</li>
+                <li>Radiology and imaging system</li>
+                <li>Clinical workflow management</li>
+                <li>Patient appointment system</li>
+                <li>User-friendly interface with Bootstrap</li>
+              </ul>
+            </div>
           </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200"
-          >
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">
-              Project Title 3
-            </h3>
+
+          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+            <h3 class="text-2xl font-bold mb-4 text-blue-600">ERP Estech</h3>
+            <div class="mb-4">
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Angular TypeScript </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> .NET Web API </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> SQL Server </span>
+              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Bootstrap </span>
+            </div>
             <p class="text-gray-700 mb-6">
-              A brief description of the project highlighting its features and
-              technologies used.
+              A custom ERP solution developed for a Dubai-based client as a freelance project. Built using modern web technologies and following best practices in software
+              development.
             </p>
-            <a
-              href="#"
-              class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 font-medium inline-block"
-              >View Project</a
-            >
+            <div class="mb-6">
+              <h4 class="font-semibold mb-2">Technical Highlights:</h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>Modern Angular TypeScript frontend</li>
+                <li>RESTful API architecture</li>
+                <li>Optimized stored procedures for performance</li>
+                <li>Responsive design with Bootstrap</li>
+                <li>Scalable database design</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -252,68 +286,38 @@
             <div>
               <label class="font-medium">React</label>
               <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 90%"
-                ></div>
+                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
               </div>
             </div>
             <div>
               <label class="font-medium">Angular</label>
               <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 85%"
-                ></div>
+                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
               </div>
             </div>
             <ul class="space-y-2">
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> React
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> Angular
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> HTML/CSS
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> JavaScript/TypeScript
-              </li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> React</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Angular</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> HTML/CSS</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> JavaScript/TypeScript</li>
             </ul>
           </div>
           <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
             <h3 class="text-2xl font-bold mb-4 text-blue-600">Backend</h3>
             <ul class="space-y-2">
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> .NET Core
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> Node.js
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> Express.js
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> SQL/NoSQL Databases
-              </li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> .NET Core</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Node.js</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Express.js</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> SQL/NoSQL Databases</li>
             </ul>
           </div>
           <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
             <h3 class="text-2xl font-bold mb-4 text-blue-600">DevOps</h3>
             <ul class="space-y-2">
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> Docker
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> Kubernetes
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> CI/CD Pipelines
-              </li>
-              <li class="flex items-center">
-                <span class="text-green-500 mr-2">✓</span> AWS/GCP/Azure
-              </li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Docker</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Kubernetes</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> CI/CD Pipelines</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AWS/GCP/Azure</li>
             </ul>
           </div>
         </div>
@@ -321,33 +325,15 @@
       <section id="services" class="mb-20">
         <h2 class="text-4xl font-semibold text-blue-700 mb-8">Our Offerings</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200"
-          >
+          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
             <h3 class="text-2xl font-bold mb-4 text-blue-600">Internship</h3>
-            <p class="text-gray-700 mb-4">
-              Gain valuable industry experience through our comprehensive
-              internship program.
-            </p>
-            <img
-              src="../images/intership.webp"
-              alt="Internship"
-              class="w-full rounded-lg"
-            />
+            <p class="text-gray-700 mb-4">Gain valuable industry experience through our comprehensive internship program.</p>
+            <img src="../images/intership.webp" alt="Internship" class="w-full rounded-lg" />
           </div>
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200"
-          >
+          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
             <h3 class="text-2xl font-bold mb-4 text-blue-600">Projects</h3>
-            <p class="text-gray-700 mb-4">
-              We offer a wide range of project opportunities to suit your needs
-              and interests.
-            </p>
-            <img
-              src="../images/projects.webp"
-              alt="Projects"
-              class="w-full rounded-lg"
-            />
+            <p class="text-gray-700 mb-4">We offer a wide range of project opportunities to suit your needs and interests.</p>
+            <img src="../images/projects.webp" alt="Projects" class="w-full rounded-lg" />
           </div>
         </div>
 
@@ -379,23 +365,17 @@
           </div>
         </div>
 
-        <h3 class="text-3xl font-semibold text-blue-700 mb-6">
-          Tools & Platforms
-        </h3>
+        <h3 class="text-3xl font-semibold text-blue-700 mb-6">Tools & Platforms</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h4 class="text-xl font-bold mb-4 text-blue-600">
-              Version Control
-            </h4>
+            <h4 class="text-xl font-bold mb-4 text-blue-600">Version Control</h4>
             <ul class="space-y-2">
               <li>• GitHub</li>
               <li>• Bitbucket</li>
             </ul>
           </div>
           <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h4 class="text-xl font-bold mb-4 text-blue-600">
-              Project Management
-            </h4>
+            <h4 class="text-xl font-bold mb-4 text-blue-600">Project Management</h4>
             <ul class="space-y-2">
               <li>• Jira</li>
             </ul>
@@ -421,20 +401,11 @@
         <h2 class="text-4xl font-semibold text-blue-700 mb-6">Contact Me</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
-            <h3 class="text-2xl font-semibold text-blue-600 mb-4">
-              Get in Touch
-            </h3>
-            <p class="text-gray-700 mb-4">
-              Feel free to reach out to me directly:
-            </p>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Get in Touch</h3>
+            <p class="text-gray-700 mb-4">Feel free to reach out to me directly:</p>
             <ul class="space-y-2">
               <li class="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2 text-blue-500"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
                   <path
                     d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
                   />
@@ -442,53 +413,25 @@
                 <span>+91 8762919916</span>
               </li>
               <li class="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2 text-blue-500"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                  />
-                  <path
-                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <a
-                  href="mailto:akshy.akky3@gmail.com"
-                  class="hover:text-blue-600 transition duration-300"
-                  >akshy.akky3@gmail.com</a
-                >
+                <a href="mailto:akshy.akky3@gmail.com" class="hover:text-blue-600 transition duration-300">akshy.akky3@gmail.com</a>
               </li>
             </ul>
           </div>
           <div>
             <form action="#" method="POST" class="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
               <textarea
                 name="message"
                 rows="5"
                 placeholder="Your Message"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
-              <button
-                type="submit"
-                class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 font-medium"
-              >
-                Send Message
-              </button>
+              <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 font-medium">Send Message</button>
             </form>
           </div>
         </div>
@@ -496,27 +439,51 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center">
+    <footer class="bg-gray-800 text-white py-12">
       <div class="container mx-auto px-6">
-        <p class="text-lg mb-4">
-          &copy; 2024 Akshay Kumar | All Rights Reserved
-        </p>
-        <div class="space-x-6">
-          <a
-            href="https://www.linkedin.com/in/akshay-kumar-b1a08b138/"
-            class="text-blue-400 hover:underline transition duration-300"
-            >LinkedIn</a
-          >
-          <a
-            href="https://github.com/Akshyakky"
-            class="text-blue-400 hover:underline transition duration-300"
-            >GitHub</a
-          >
-          <a
-            href="#"
-            class="text-blue-400 hover:underline transition duration-300"
-            >Twitter</a
-          >
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Akshay Kumar</h3>
+            <p class="text-gray-400">Full Stack Developer specialized in healthcare solutions</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+              <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+              <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
+              <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Connect</h3>
+            <div class="flex space-x-4">
+              <a href="https://www.linkedin.com/in/akshay-kumar-b1a08b138/" class="text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a href="https://github.com/Akshyakky" class="text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p class="text-gray-400">&copy; 2024 Akshay Kumar. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -548,6 +515,21 @@
           });
         });
       });
+
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeIn");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
     </script>
   </body>
 </html>
