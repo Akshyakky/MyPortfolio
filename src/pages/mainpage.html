@@ -1,367 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akshay Kumar | Full Stack Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Poppins", "sans-serif"],
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshay Kumar | Full Stack Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0" },
+              "100%": { opacity: "1" },
             },
-            keyframes: {
-              fadeIn: {
-                "0%": { opacity: "0" },
-                "100%": { opacity: "1" },
-              },
-              fadeOut: {
-                "0%": { opacity: "1" },
-                "100%": { opacity: "0" },
-              },
-            },
-            animation: {
-              fadeIn: "fadeIn 0.5s ease-in-out",
-              fadeOut: "fadeOut 0.5s ease-in-out",
+            fadeOut: {
+              "0%": { opacity: "1" },
+              "100%": { opacity: "0" },
             },
           },
+          animation: {
+            fadeIn: "fadeIn 0.5s ease-in-out",
+            fadeOut: "fadeOut 0.5s ease-in-out",
+          },
         },
-      };
-    </script>
-  </head>
-  <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed tracking-wide flex flex-col min-h-screen">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-6 sticky top-0 z-50">
-      <div class="container mx-auto px-6 flex justify-between items-center">
-        <h1 class="text-3xl font-bold">Akshay Kumar</h1>
-        <nav class="hidden md:block">
-          <ul class="flex space-x-8">
-            <li><a href="#about" class="hover:text-gray-300 transition duration-300">About</a></li>
-            <li><a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a></li>
-            <li><a href="#skills" class="hover:text-gray-300 transition duration-300">Skills</a></li>
-            <li><a href="#services" class="hover:text-gray-300 transition duration-300">Services</a></li>
-            <li><a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="md:hidden flex items-center text-white focus:outline-none" id="menu-button">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
+      },
+    };
+  </script>
+  <style>
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hero-text {
+      animation: slideUp 0.8s ease-out;
+    }
+
+    .stats-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: linear-gradient(145deg, #ffffff 0%, #f3f4f6 100%);
+    }
+
+    .stats-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .hero-button {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: translateX(-100%);
+    }
+
+    .hero-button:hover::after {
+      transform: translateX(100%);
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .hero-section {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234338ca' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed tracking-wide flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-6 sticky top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Akshay Kumar</h1>
+      <nav class="hidden md:block">
+        <ul class="flex space-x-8">
+          <li><a href="#about" class="hover:text-gray-300 transition duration-300">About</a></li>
+          <li><a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a></li>
+          <li><a href="#skills" class="hover:text-gray-300 transition duration-300">Skills</a></li>
+          <li><a href="#services" class="hover:text-gray-300 transition duration-300">Services</a></li>
+          <li><a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="md:hidden flex items-center text-white focus:outline-none" id="menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu"
+    class="md:hidden fixed inset-0 bg-blue-700 bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
+    <div class="flex justify-end p-4">
+      <button id="close-menu" class="text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <ul class="flex flex-col items-center space-y-8 py-8">
+      <li>
+        <a href="#about" class="text-white text-xl hover:text-gray-300 transition duration-300">About</a>
+      </li>
+      <li>
+        <a href="#projects" class="text-white text-xl hover:text-gray-300 transition duration-300">Projects</a>
+      </li>
+      <li>
+        <a href="#skills" class="text-white text-xl hover:text-gray-300 transition duration-300">Skills</a>
+      </li>
+      <li>
+        <a href="#contact" class="text-white text-xl hover:text-gray-300 transition duration-300">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-6 py-12">
+    <section class="relative bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-20 hero-section">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6 hero-text">
+            <h1 class="text-5xl font-bold leading-tight">
+              Full Stack Developer
+              <span class="block text-blue-300">Specialized in Digital Solutions</span>
+            </h1>
+            <p class="text-xl text-gray-200">Building robust, scalable applications with modern technologies</p>
+            <div class="flex space-x-4">
+              <a href="#contact"
+                class="hero-button bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 transform hover:scale-105">
+                Get in Touch
+              </a>
+              <a href="#projects"
+                class="hero-button border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300 transform hover:scale-105">
+                View Projects
+              </a>
+            </div>
+          </div>
+          <div class="relative hidden md:block">
+            <div class="absolute inset-0 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
+            <img src="/src/images/MyProfilePhoto.JPG" alt="Akshay Kumar"
+              class="relative z-10 w-64 h-64 rounded-full border-4 border-white shadow-xl mx-auto object-cover" />
+          </div>
+        </div>
       </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <nav id="mobile-menu" class="md:hidden fixed inset-0 bg-blue-700 bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
-      <div class="flex justify-end p-4">
-        <button id="close-menu" class="text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
+      <!-- Wave effect -->
+      <div class="absolute bottom-0 left-0 right-0 overflow-hidden">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-12">
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            fill="#F9FAFB"></path>
+        </svg>
       </div>
-      <ul class="flex flex-col items-center space-y-8 py-8">
-        <li>
-          <a href="#about" class="text-white text-xl hover:text-gray-300 transition duration-300">About</a>
-        </li>
-        <li>
-          <a href="#projects" class="text-white text-xl hover:text-gray-300 transition duration-300">Projects</a>
-        </li>
-        <li>
-          <a href="#skills" class="text-white text-xl hover:text-gray-300 transition duration-300">Skills</a>
-        </li>
-        <li>
-          <a href="#contact" class="text-white text-xl hover:text-gray-300 transition duration-300">Contact</a>
-        </li>
-      </ul>
-    </nav>
+    </section>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-6 py-12">
-      <section class="relative bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-20">
-        <div class="container mx-auto px-6">
-          <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-              <h1 class="text-5xl font-bold leading-tight">
-                Full Stack Developer
-                <span class="block text-blue-300">Specialized in Healthcare Solutions</span>
-              </h1>
-              <p class="text-xl text-gray-200">Building robust, scalable applications with modern technologies to transform healthcare delivery</p>
-              <div class="flex space-x-4">
-                <a href="#contact" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300"> Get in Touch </a>
-                <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition duration-300">
-                  View Projects
-                </a>
-              </div>
-            </div>
-            <div class="relative hidden md:block">
-              <div class="absolute inset-0 bg-blue-600 rounded-full opacity-20 blur-3xl"></div>
-              <img src="/src/images/MyProfilePhoto.JPG" alt="Akshay Kumar" class="relative z-10 w-64 h-64 rounded-full border-4 border-white shadow-xl mx-auto object-cover" />
-            </div>
-          </div>
+    <!-- Statistics Section (New) -->
+    <section class="container mx-auto px-6 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <span class="text-4xl font-bold text-blue-600">5+</span>
+          <p class="text-gray-600 mt-2">Years Experience</p>
         </div>
-        <!-- Wave effect -->
-        <div class="absolute bottom-0 left-0 right-0 overflow-hidden">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-12">
-            <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              fill="#F9FAFB"
-            ></path>
-          </svg>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <span class="text-4xl font-bold text-blue-600">20+</span>
+          <p class="text-gray-600 mt-2">Projects Completed</p>
         </div>
-      </section>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <span class="text-4xl font-bold text-blue-600">10+</span>
+          <p class="text-gray-600 mt-2">Healthcare Clients</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+          <span class="text-4xl font-bold text-blue-600">3</span>
+          <p class="text-gray-600 mt-2">Major HMIS Systems</p>
+        </div>
+      </div>
+    </section>
 
-      <!-- Statistics Section (New) -->
-      <section class="container mx-auto px-6 py-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-            <span class="text-4xl font-bold text-blue-600">5+</span>
-            <p class="text-gray-600 mt-2">Years Experience</p>
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-6 py-12">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="w-48 h-48 flex-shrink-0">
+            <img src="/src/images/MyProfilePhoto.JPG" alt="Profile Image"
+              class="w-full h-full rounded-full shadow-lg object-cover border-4 border-blue-500" />
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-            <span class="text-4xl font-bold text-blue-600">20+</span>
-            <p class="text-gray-600 mt-2">Projects Completed</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-            <span class="text-4xl font-bold text-blue-600">10+</span>
-            <p class="text-gray-600 mt-2">Healthcare Clients</p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-            <span class="text-4xl font-bold text-blue-600">3</span>
-            <p class="text-gray-600 mt-2">Major HMIS Systems</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="container mx-auto px-6 py-12">
-        <div class="bg-white rounded-xl shadow-lg p-8">
-          <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="w-48 h-48 flex-shrink-0">
-              <img src="/src/images/MyProfilePhoto.JPG" alt="Profile Image" class="w-full h-full rounded-full shadow-lg object-cover border-4 border-blue-500" />
-            </div>
-            <div class="flex-1">
-              <h2 class="text-4xl font-semibold text-blue-700 mb-6">About Me</h2>
-              <div class="space-y-4">
-                <p class="text-xl text-gray-700">
-                  I am a passionate Full Stack Developer with over 5 years of expertise in healthcare software development. Specializing in .NET, React, and Angular, I've dedicated
-                  my career to building efficient healthcare management systems that make a real difference in patient care delivery.
-                </p>
-                <div class="grid md:grid-cols-2 gap-4 mt-6">
-                  <div class="flex items-center space-x-2">
-                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>Healthcare Domain Expert</span>
-                  </div>
-                  <div class="flex items-center space-x-2">
-                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>Full Stack Development</span>
-                  </div>
-                  <div class="flex items-center space-x-2">
-                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>Database Architecture</span>
-                  </div>
-                  <div class="flex items-center space-x-2">
-                    <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>Cloud Solutions</span>
-                  </div>
+          <div class="flex-1">
+            <h2 class="text-4xl font-semibold text-blue-700 mb-6">About Me</h2>
+            <div class="space-y-4">
+              <p class="text-xl text-gray-700">
+                I am a passionate Full Stack Developer with over 5 years of expertise in healthcare software
+                development. Specializing in .NET, React, and Angular, I've dedicated
+                my career to building efficient healthcare management systems that make a real difference in patient
+                care delivery.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 mt-6">
+                <div class="flex items-center space-x-2">
+                  <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Healthcare Domain Expert</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Full Stack Development</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Database Architecture</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Cloud Solutions</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="mb-20">
-        <h2 class="text-4xl font-semibold text-blue-700 mb-8">Projects</h2>
-        <div class="grid grid-cols-1 gap-8">
-          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">eBios Core</h3>
-            <div class="mb-4">
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> .NET Core Web API </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> React TypeScript </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Entity Framework </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Multiple DB Support </span>
-            </div>
-            <p class="text-gray-700 mb-6">
-              A modern, full-featured Hospital Management Information System (HMIS) built with cutting-edge technologies. The system provides comprehensive healthcare facility
-              management capabilities with support for multiple database platforms.
-            </p>
-            <div class="mb-6">
-              <h4 class="font-semibold mb-2">Key Features:</h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-1">
-                <li>Multi-database support (SQL Server, Oracle, MySQL)</li>
-                <li>Laboratory management system</li>
-                <li>Radiology and ultrasound module</li>
-                <li>Clinical management system</li>
-                <li>Appointment scheduling</li>
-                <li>Modern API architecture with Entity Framework</li>
-              </ul>
-            </div>
+    <!-- Projects Section -->
+    <section id="projects" class="mb-20">
+      <h2 class="text-4xl font-semibold text-blue-700 mb-8">Projects</h2>
+      <div class="grid grid-cols-1 gap-8">
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">eBios Core</h3>
+          <div class="mb-4">
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> .NET
+              Core Web API </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> React
+              TypeScript </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Entity
+              Framework </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Multiple DB
+              Support </span>
           </div>
-
-          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">eBios Lite</h3>
-            <div class="mb-4">
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> ASP.NET </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> C# </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Oracle </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Bootstrap </span>
-            </div>
-            <p class="text-gray-700 mb-6">
-              A comprehensive Hospital Management Information System (HMIS) designed to streamline healthcare operations. Built with robust technologies to ensure reliability and
-              performance.
-            </p>
-            <div class="mb-6">
-              <h4 class="font-semibold mb-2">Core Components:</h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-1">
-                <li>Integrated laboratory management</li>
-                <li>Radiology and imaging system</li>
-                <li>Clinical workflow management</li>
-                <li>Patient appointment system</li>
-                <li>User-friendly interface with Bootstrap</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">ERP Estech</h3>
-            <div class="mb-4">
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Angular TypeScript </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> .NET Web API </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> SQL Server </span>
-              <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Bootstrap </span>
-            </div>
-            <p class="text-gray-700 mb-6">
-              A custom ERP solution developed for a Dubai-based client as a freelance project. Built using modern web technologies and following best practices in software
-              development.
-            </p>
-            <div class="mb-6">
-              <h4 class="font-semibold mb-2">Technical Highlights:</h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-1">
-                <li>Modern Angular TypeScript frontend</li>
-                <li>RESTful API architecture</li>
-                <li>Optimized stored procedures for performance</li>
-                <li>Responsive design with Bootstrap</li>
-                <li>Scalable database design</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="mb-20">
-        <h2 class="text-4xl font-semibold text-blue-700 mb-8">Skills</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">Frontend</h3>
-            <div>
-              <label class="font-medium">React</label>
-              <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
-              </div>
-            </div>
-            <div>
-              <label class="font-medium">Angular</label>
-              <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
-              </div>
-            </div>
-            <ul class="space-y-2">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> React</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Angular</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> HTML/CSS</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> JavaScript/TypeScript</li>
-            </ul>
-          </div>
-          <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">Backend</h3>
-            <ul class="space-y-2">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> .NET Core</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Node.js</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Express.js</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> SQL/NoSQL Databases</li>
-            </ul>
-          </div>
-          <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">DevOps</h3>
-            <ul class="space-y-2">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Docker</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Kubernetes</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> CI/CD Pipelines</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AWS/GCP/Azure</li>
+          <p class="text-gray-700 mb-6">
+            A modern, full-featured Hospital Management Information System (HMIS) built with cutting-edge technologies.
+            The system provides comprehensive healthcare facility
+            management capabilities with support for multiple database platforms.
+          </p>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Key Features:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li>Multi-database support (SQL Server, Oracle, MySQL)</li>
+              <li>Laboratory management system</li>
+              <li>Radiology and ultrasound module</li>
+              <li>Clinical management system</li>
+              <li>Appointment scheduling</li>
+              <li>Modern API architecture with Entity Framework</li>
             </ul>
           </div>
         </div>
-      </section>
-      <section id="services" class="mb-20">
-        <h2 class="text-4xl font-semibold text-blue-700 mb-8">Our Offerings</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">Internship</h3>
-            <p class="text-gray-700 mb-4">Gain valuable industry experience through our comprehensive internship program.</p>
-            <img src="../images/intership.webp" alt="Internship" class="w-full rounded-lg" />
+
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">eBios Lite</h3>
+          <div class="mb-4">
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> ASP.NET
+            </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> C#
+            </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Oracle
+            </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Bootstrap
+            </span>
           </div>
-          <div class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
-            <h3 class="text-2xl font-bold mb-4 text-blue-600">Projects</h3>
-            <p class="text-gray-700 mb-4">We offer a wide range of project opportunities to suit your needs and interests.</p>
-            <img src="../images/projects.webp" alt="Projects" class="w-full rounded-lg" />
+          <p class="text-gray-700 mb-6">
+            A comprehensive Hospital Management Information System (HMIS) designed to streamline healthcare operations.
+            Built with robust technologies to ensure reliability and
+            performance.
+          </p>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Core Components:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li>Integrated laboratory management</li>
+              <li>Radiology and imaging system</li>
+              <li>Clinical workflow management</li>
+              <li>Patient appointment system</li>
+              <li>User-friendly interface with Bootstrap</li>
+            </ul>
           </div>
         </div>
 
-        <h3 class="text-3xl font-semibold text-blue-700 mb-6">Technologies</h3>
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">ERP Estech</h3>
+          <div class="mb-4">
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> Angular
+              TypeScript </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> .NET
+              Web API </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"> SQL
+              Server </span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded"> Bootstrap
+            </span>
+          </div>
+          <p class="text-gray-700 mb-6">
+            A custom ERP solution developed for a Dubai-based client as a freelance project. Built using modern web
+            technologies and following best practices in software
+            development.
+          </p>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Technical Highlights:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li>Modern Angular TypeScript frontend</li>
+              <li>RESTful API architecture</li>
+              <li>Optimized stored procedures for performance</li>
+              <li>Responsive design with Bootstrap</li>
+              <li>Scalable database design</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Renexx Website -->
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-bold text-blue-600">Renexx - Property Contract Management Platform</h3>
+            <div class="flex space-x-4">
+              <a href="https://renexx.com" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a href="https://github.com/Akshyakky/Renexx-Website" target="_blank"
+                class="text-gray-600 hover:text-gray-800 transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mb-4">
+            <span
+              class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">React</span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">Tailwind
+              CSS</span>
+            <span
+              class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">JavaScript</span>
+            <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Responsive
+              Design</span>
+          </div>
+          <p class="text-gray-700 mb-6">A sophisticated property contract management platform for Dubai's real estate
+            market. This platform streamlines the process of managing property contracts, leases, and proposals with
+            comprehensive management solutions.</p>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Key Features:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li>Modern, responsive user interface with smooth animations</li>
+              <li>Contract management system with document generation</li>
+              <li>Property listing and management dashboard</li>
+              <li>Integrated payment tracking system</li>
+              <li>Client portal for property owners and tenants</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SIAS Website -->
+        <div
+          class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-2xl font-bold text-blue-600">SIAS - Professional Accounting Services</h3>
+            <div class="flex space-x-4">
+              <a href="https://siasaccounting.com" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a href="https://github.com/Akshyakky/sias-website" target="_blank"
+                class="text-gray-600 hover:text-gray-800 transition">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="mb-4">
+            <span
+              class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">HTML5</span>
+            <span
+              class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">CSS3</span>
+            <span
+              class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">JavaScript</span>
+            <span
+              class="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">Bootstrap</span>
+          </div>
+          <p class="text-gray-700 mb-6">A professional website for UAE's leading accounting services firm, offering
+            modern accounting solutions and financial guidance for businesses of all sizes.</p>
+          <div class="mb-6">
+            <h4 class="font-semibold mb-2">Key Features:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li>Professional service showcase with detailed service descriptions</li>
+              <li>Interactive contact forms with validation</li>
+              <li>Responsive design optimized for all devices</li>
+              <li>Client testimonials and success stories section</li>
+              <li>Integrated blog for financial insights and updates</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="mb-20">
+      <h2 class="text-4xl font-semibold text-blue-700 mb-8">Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">Frontend</h3>
+          <div>
+            <label class="font-medium">React</label>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          <div>
+            <label class="font-medium">Angular</label>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <ul class="space-y-2">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> React</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Angular</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> HTML/CSS</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> JavaScript/TypeScript</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">Backend</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> .NET Core</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Node.js</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Express.js</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> SQL/NoSQL Databases</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+          <h3 class="text-2xl font-bold mb-4 text-blue-600">DevOps</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Docker</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Kubernetes</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> CI/CD Pipelines</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AWS/GCP/Azure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="services" class="mb-20">
+      <h2 class="text-4xl font-semibold text-blue-700 mb-8">Our Offerings</h2>
+      <!-- Web Applications -->
+      <div
+        class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200 mb-8">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">Enterprise Web Applications</h3>
+        <p class="text-gray-700 mb-6">End-to-end web application development services tailored for modern businesses,
+          from concept to deployment.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-2 text-gray-800">Industry Solutions:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Restaurant Management Systems</li>
+              <li>Booking & Reservation Platforms</li>
+              <li>Conference & Event Management</li>
+              <li>Fleet & Delivery Tracking Solutions</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2 text-gray-800">Key Features:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Payment Gateway Integration</li>
+              <li>Real-time Tracking Systems</li>
+              <li>Inventory Management</li>
+              <li>Custom Reporting Dashboards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-commerce Solutions -->
+      <div
+        class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200 mb-8">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">E-commerce & Digital Solutions</h3>
+        <p class="text-gray-700 mb-6">Comprehensive digital commerce solutions that help businesses establish and expand
+          their online presence.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-2 text-gray-800">Core Services:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>E-commerce Platform Development</li>
+              <li>Online Booking Systems</li>
+              <li>Digital Payment Solutions</li>
+              <li>Order Management Systems</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2 text-gray-800">Integration Services:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Multiple Payment Gateway Integration</li>
+              <li>Shipping & Logistics Integration</li>
+              <li>Inventory Sync Systems</li>
+              <li>Analytics & Reporting Tools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Development -->
+      <div
+        class="bg-white p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl border border-gray-200">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">Custom Development Services</h3>
+        <p class="text-gray-700 mb-6">Specialized development services for businesses requiring unique solutions to
+          complex challenges.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-2 text-gray-800">Development Areas:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Static Website Development</li>
+              <li>Progressive Web Applications</li>
+              <li>Custom API Development</li>
+              <li>Mobile-First Applications</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2 text-gray-800">Technical Services:</h4>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Performance Optimization</li>
+              <li>Security Implementation</li>
+              <li>Third-party API Integration</li>
+              <li>Cloud Infrastructure Setup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-12">
+        <h3 class="text-3xl font-semibold text-blue-700 mb-8">Technologies & Tools</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h4 class="text-xl font-bold mb-4 text-blue-600">Frontend</h4>
-            <ul class="space-y-2">
-              <li>• React TypeScript</li>
-              <li>• React JS</li>
-              <li>• React Native Expo</li>
-              <li>• Angular</li>
-            </ul>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center mb-6">
+              <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <h4 class="text-2xl font-bold text-blue-600">Frontend</h4>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">React TypeScript</span>
+              </div>
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">React JS</span>
+              </div>
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">React Native Expo</span>
+              </div>
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">Angular</span>
+              </div>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h4 class="text-xl font-bold mb-4 text-blue-600">Backend</h4>
-            <ul class="space-y-2">
-              <li>• .NET Core</li>
-              <li>• ASP.NET</li>
-            </ul>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center mb-6">
+              <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+              <h4 class="text-2xl font-bold text-blue-600">Backend</h4>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">.NET Core</span>
+              </div>
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">ASP.NET</span>
+              </div>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h4 class="text-xl font-bold mb-4 text-blue-600">Databases</h4>
-            <ul class="space-y-2">
-              <li>• SQL Server</li>
-              <li>• Oracle</li>
-              <li>• MySQL</li>
-            </ul>
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+            <div class="flex items-center mb-6">
+              <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h8" />
+              </svg>
+              <h4 class="text-2xl font-bold text-blue-600">Databases</h4>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">SQL Server</span>
+              </div>
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">Oracle</span>
+              </div>
+              <div class="flex items-center">
+                <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                <span class="text-gray-700">MySQL</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -395,141 +679,245 @@
             </ul>
           </div>
         </div>
-      </section>
-      <!-- Contact Section -->
-      <section id="contact" class="mb-20 bg-white shadow-lg rounded-lg p-8">
-        <h2 class="text-4xl font-semibold text-blue-700 mb-6">Contact Me</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div>
-            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Get in Touch</h3>
-            <p class="text-gray-700 mb-4">Feel free to reach out to me directly:</p>
-            <ul class="space-y-2">
-              <li class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="mb-20 bg-white shadow-lg rounded-lg p-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-semibold text-blue-700 mb-4">Contact Me</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Let's discuss how I can help bring your ideas to life with modern web
+          solutions.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-8">
+        <!-- Contact Information -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-semibold text-blue-600 mb-4">Get in Touch</h3>
+          <p class="text-gray-700">Feel free to reach out through any of these channels:</p>
+
+          <div class="space-y-4">
+            <div class="flex items-center p-4 bg-blue-50 rounded-lg transition-all duration-300 hover:bg-blue-100">
+              <div class="bg-blue-100 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" viewBox="0 0 20 20"
+                  fill="currentColor">
                   <path
-                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                  />
+                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <span>+91 8762919916</span>
-              </li>
-              <li class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+              </div>
+              <div class="ml-4">
+                <h4 class="text-sm font-medium text-gray-900">Phone</h4>
+                <p class="text-gray-600">+91 8762919916</p>
+              </div>
+            </div>
+
+            <div class="flex items-center p-4 bg-blue-50 rounded-lg transition-all duration-300 hover:bg-blue-100">
+              <div class="bg-blue-100 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" viewBox="0 0 20 20"
+                  fill="currentColor">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <a href="mailto:akshy.akky3@gmail.com" class="hover:text-blue-600 transition duration-300">akshy.akky3@gmail.com</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <form action="#" method="POST" class="space-y-4">
-              <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Your Message"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
-              <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300 font-medium">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-      <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Akshay Kumar</h3>
-            <p class="text-gray-400">Full Stack Developer specialized in healthcare solutions</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-            <ul class="space-y-2">
-              <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
-              <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
-              <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
-              <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Connect</h3>
-            <div class="flex space-x-4">
-              <a href="https://www.linkedin.com/in/akshay-kumar-b1a08b138/" class="text-gray-400 hover:text-white transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  />
-                </svg>
-              </a>
-              <a href="https://github.com/Akshyakky" class="text-gray-400 hover:text-white transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="text-gray-400 hover:text-white transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                  />
-                </svg>
-              </a>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-sm font-medium text-gray-900">Email</h4>
+                <a href="mailto:akshy.akky3@gmail.com"
+                  class="text-gray-600 hover:text-blue-600 transition-colors">akshy.akky3@gmail.com</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p class="text-gray-400">&copy; 2024 Akshay Kumar. All rights reserved.</p>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+              placeholder="Your full name" />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="email" name="email" required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+              placeholder="your@email.com" />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+              placeholder="How can I help you?"></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
+            <span>Send Message</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Akshay Kumar</h3>
+          <p class="text-gray-400">Full Stack Developer specialized in healthcare solutions</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+            <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a></li>
+            <li><a href="#skills" class="text-gray-400 hover:text-white transition">Skills</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Connect</h3>
+          <div class="flex space-x-4">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/akshay-kumar-b1a08b138/" target="_blank" rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Akshyakky" target="_blank" rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+
+            <!-- Twitter -->
+            <a href="https://twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
-    </footer>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-400">&copy; 2024 Akshay Kumar. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-      // Mobile menu toggle with animation
-      const menuButton = document.getElementById("menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const closeMenu = document.getElementById("close-menu");
+  <script>
+    // Mobile menu toggle with animation
+    const menuButton = document.getElementById("menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
 
-      function toggleMenu() {
-        mobileMenu.classList.toggle("translate-x-full");
+    function toggleMenu() {
+      mobileMenu.classList.toggle("translate-x-full");
+    }
+
+    menuButton.addEventListener("click", toggleMenu);
+    closeMenu.addEventListener("click", toggleMenu);
+
+    // Close menu when clicking on a link
+    document.querySelectorAll("#mobile-menu a").forEach((link) => {
+      link.addEventListener("click", toggleMenu);
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    });
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fadeIn");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+  </script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.innerHTML;
+
+      // Disable the button and show loading state
+      submitButton.disabled = true;
+      submitButton.innerHTML = `
+        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Sending...</span>
+      `;
+
+      try {
+        // Collect form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        // You can implement your preferred email service here
+        // Example using EmailJS:
+        // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', data, 'YOUR_USER_ID');
+
+        // For demonstration, we'll use a timeout to simulate sending
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Show success message
+        showNotification('Message sent successfully!', 'success');
+        form.reset();
+      } catch (error) {
+        // Show error message
+        showNotification('Failed to send message. Please try again.', 'error');
+        console.error('Error:', error);
+      } finally {
+        // Reset button state
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
       }
+    });
 
-      menuButton.addEventListener("click", toggleMenu);
-      closeMenu.addEventListener("click", toggleMenu);
+    function showNotification(message, type) {
+      const notification = document.createElement('div');
+      notification.className = `fixed bottom-4 right-4 p-4 rounded-lg text-white ${type === 'success' ? 'bg-green-500' : 'bg-red-500'
+        } shadow-lg transform translate-y-0 opacity-100 transition-all duration-500`;
+      notification.textContent = message;
 
-      // Close menu when clicking on a link
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", toggleMenu);
-      });
+      document.body.appendChild(notification);
 
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
+      // Remove notification after 3 seconds
+      setTimeout(() => {
+        notification.classList.add('translate-y-full', 'opacity-0');
+        setTimeout(() => notification.remove(), 500);
+      }, 3000);
+    }
+  </script>
+</body>
 
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fadeIn");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-    </script>
-  </body>
 </html>
