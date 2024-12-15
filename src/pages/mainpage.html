@@ -60,21 +60,28 @@
     </header>
 
     <!-- Mobile Menu -->
-    <nav id="mobile-menu" class="md:hidden fixed inset-0 bg-blue-700 bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
+    <nav
+      id="mobile-menu"
+      class="md:hidden fixed inset-0 bg-blue-700 bg-opacity-95 z-50 transform transition-transform duration-300 ease-in-out translate-x-full"
+      aria-label="Mobile navigation"
+      aria-expanded="false"
+    >
       <div class="flex justify-end p-4">
-        <button id="close-menu" class="text-white">
+        <button id="close-menu" class="text-white p-2 hover:bg-blue-600 rounded-lg transition-colors" aria-label="Close menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
-      <ul class="flex flex-col items-center space-y-8 py-8">
-        <li><a href="about.html" class="text-white text-xl hover:text-gray-300 transition duration-300">About</a></li>
-        <li><a href="projects.html" class="text-white text-xl hover:text-gray-300 transition duration-300">Projects</a></li>
-        <li><a href="skills.html" class="text-white text-xl hover:text-gray-300 transition duration-300">Skills</a></li>
-        <li><a href="services.html" class="text-white text-xl hover:text-gray-300 transition duration-300">Services</a></li>
-        <li><a href="contact.html" class="text-white text-xl hover:text-gray-300 transition duration-300">Contact</a></li>
-      </ul>
+      <div class="h-full overflow-y-auto">
+        <ul class="flex flex-col items-center space-y-8 py-8">
+          <li><a href="about.html" class="text-white text-xl hover:text-gray-300 transition duration-300 p-2">About</a></li>
+          <li><a href="projects.html" class="text-white text-xl hover:text-gray-300 transition duration-300 p-2">Projects</a></li>
+          <li><a href="skills.html" class="text-white text-xl hover:text-gray-300 transition duration-300 p-2">Skills</a></li>
+          <li><a href="services.html" class="text-white text-xl hover:text-gray-300 transition duration-300 p-2">Services</a></li>
+          <li><a href="contact.html" class="text-white text-xl hover:text-gray-300 transition duration-300 p-2">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Main Content -->
